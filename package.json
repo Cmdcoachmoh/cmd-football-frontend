@@ -1,0 +1,40 @@
+{
+  "name": "cmd-football-site",
+  "version": "1.0.0",
+  "description": "CMD Football | Elevate Your Game",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "football",
+    "react",
+    "vite",
+    "coaching",
+    "dashboard"
+  ],
+  "author": "Coach Mohamad",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "file-saver": "^2.0.5",
+    "jspdf": "^3.0.3",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.30.1",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.41",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^7.2.2",
+    "vitest": "^4.0.9"
+  }
+}

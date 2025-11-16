@@ -1,0 +1,55 @@
+.hero {
+  background: linear-gradient(to right, #007bff, #17a2b8);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  display: inline-block;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background-color: #f8f9fa;
+}
+
+.grid-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e9ecef;
+  font-size: 0.9rem;
+}

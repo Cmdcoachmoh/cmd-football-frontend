@@ -6,6 +6,7 @@ import ProgressChart from "../components/ProgressChart";
 import WeeklyGrowthChart from "../components/WeeklyGrowthChart";
 import BadgeLegend from "../components/BadgeLegend";
 import { BackendGate } from "../components/BackendGate";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const [players, setPlayers] = useState<{ id: number; name: string; badgeTier?: string }[]>([]);

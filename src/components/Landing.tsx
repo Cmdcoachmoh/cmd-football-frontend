@@ -7,11 +7,7 @@ const Landing: React.FC = () => {
     <div>
       <section className="hero">
         <div className="glass-card">
-          <img
-            src="/images/cmd-logo.jpg"
-            alt="CMD Football Logo"
-            className="logo"
-          />
+          <img src="/images/cmd-logo.jpg" alt="CMD Football Logo" className="logo" />
           <h1>CMD Football</h1>
           <p className="subtitle">Effort. Elevation. Excellence.</p>
           <Link to="/dashboard" className="btn">

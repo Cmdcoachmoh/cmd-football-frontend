@@ -11,9 +11,9 @@ const LoginForm = () => {
       const response = await fetch(`${import.meta.env.VITE_API_BASE}/api/login`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password })
       });
 
       const data = await response.json();
@@ -56,4 +56,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-

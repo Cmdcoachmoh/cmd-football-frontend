@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc"; // ✅ SWC for faster builds
 import path from "path";
 
 export default defineConfig({
+  base: "./", // ✅ Ensures relative paths work in static hosting (Railway, Netlify, Vercel)
   plugins: [react()],
   resolve: {
     alias: {
@@ -25,7 +26,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            return "vendor";
+            return "vendor"; // ✅ Separates vendor code for better caching
           }
         }
       }

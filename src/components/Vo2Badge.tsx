@@ -15,7 +15,7 @@ const Vo2Badge: React.FC<Vo2BadgeProps> = ({ vo2 }) => {
         padding: "6px 12px",
         borderRadius: "12px",
         fontWeight: "bold",
-        marginLeft: "10px",
+        marginLeft: "10px"
       }}
     >
       {isElite ? "🏅 Elite" : "Training"}

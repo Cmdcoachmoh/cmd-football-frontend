@@ -1,7 +1,7 @@
 const badgeLegend = [
   { tier: "Elite", icon: "🏅", color: "green", description: "Top 5% performers" },
   { tier: "Advanced", icon: "🎖️", color: "blue", description: "Consistent growth" },
-  { tier: "Starter", icon: "🔰", color: "gray", description: "New or developing players" },
+  { tier: "Starter", icon: "🔰", color: "gray", description: "New or developing players" }
 ];
 
 export default function BadgeLegend() {

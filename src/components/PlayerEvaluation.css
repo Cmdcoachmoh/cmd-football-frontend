@@ -1,0 +1,49 @@
+.evaluation-container {
+  padding: 20px;
+  background: #f4f6fa;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select {
+  padding: 8px;
+  margin: 10px 0 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.bonus {
+  background-color: #d4f8e8;
+  color: #0a7c4a;
+}
+
+.malus {
+  background-color: #ffe0e0;
+  color: #a30000;
+}
+
+.save {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}

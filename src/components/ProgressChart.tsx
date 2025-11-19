@@ -92,16 +92,18 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
       {
         label: "Growth Score",
         data: [data.score],
-        backgroundColor: [getColor(data.score)],
-      },
-    ],
+        backgroundColor: [getColor(data.score)]
+      }
+    ]
   };
 
   return (
     <div className="progress-chart">
       <h2>{data.name}</h2>
       <p>Score: {data.score}</p>
-      <p id="badge" className="badge">{getBadge(data.score)}</p>
+      <p id="badge" className="badge">
+        {getBadge(data.score)}
+      </p>
 
       <Bar data={chartData} />
 

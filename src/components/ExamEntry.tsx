@@ -11,4 +11,3 @@ const ExamEntry: React.FC = () => {
 };
 
 export default ExamEntry;
-

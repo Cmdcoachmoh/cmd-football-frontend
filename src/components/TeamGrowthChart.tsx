@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import jsPDF from "jspdf";
 import { saveAs } from "file-saver";
-import {
-  Chart as ChartJS,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-} from "chart.js";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from "chart.js";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale);
 
@@ -55,9 +50,9 @@ const TeamGrowthChart = () => {
   };
 
   const exportCSV = () => {
-    const csv = "Name,Score,Badge\n" + players
-      .map((p) => `${p.name},${p.score},${getBadge(p.score)}`)
-      .join("\n");
+    const csv =
+      "Name,Score,Badge\n" +
+      players.map((p) => `${p.name},${p.score},${getBadge(p.score)}`).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     saveAs(blob, "team-growth.csv");
   };
@@ -70,9 +65,9 @@ const TeamGrowthChart = () => {
       {
         label: "Growth Score",
         data: players.map((p) => p.score),
-        backgroundColor: players.map((p) => getColor(p.score)),
-      },
-    ],
+        backgroundColor: players.map((p) => getColor(p.score))
+      }
+    ]
   };
 
   return (

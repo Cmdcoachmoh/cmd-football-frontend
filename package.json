@@ -2,11 +2,16 @@
   "name": "cmd-football-site",
   "version": "1.0.0",
   "description": "CMD Football | Elevate Your Game",
+  "type": "module",
   "main": "index.js",
+  "homepage": "./",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "prepare": "husky install"
   },
   "keywords": [
     "football",
@@ -18,9 +23,13 @@
   "author": "Coach Mohamad",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^3.2.0",
     "chart.js": "^4.5.1",
+    "chartjs": "^0.3.24",
+    "chartjs-node-canvas": "^5.0.0",
     "file-saver": "^2.0.5",
     "jspdf": "^3.0.3",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.0.0",
@@ -34,7 +43,17 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
     "vite": "^7.2.2",
     "vitest": "^4.0.9"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,css,scss}": [
+      "prettier --write"
+    ]
   }
 }

@@ -14,13 +14,13 @@ type Props = {
 const badgeIcons: Record<string, string> = {
   Elite: "🏅",
   Advanced: "🎖️",
-  Starter: "🔰",
+  Starter: "🔰"
 };
 
 const badgeColors: Record<string, string> = {
   Elite: "green",
   Advanced: "blue",
-  Starter: "gray",
+  Starter: "gray"
 };
 
 const PlayerSelector = ({ players, onSelect }: Props) => {

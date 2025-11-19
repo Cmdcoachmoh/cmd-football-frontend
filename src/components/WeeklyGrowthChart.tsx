@@ -19,15 +19,15 @@ const WeeklyGrowthChart = ({ playerId }: { playerId: number }) => {
   }, [playerId]);
 
   const chartData = {
-    labels: data.map(d => d.weekLabel),
+    labels: data.map((d) => d.weekLabel),
     datasets: [
       {
         label: "Weekly Growth",
-        data: data.map(d => d.score),
+        data: data.map((d) => d.score),
         borderColor: "#1E90FF",
-        fill: false,
-      },
-    ],
+        fill: false
+      }
+    ]
   };
 
   return <Line data={chartData} />;

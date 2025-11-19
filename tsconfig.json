@@ -25,11 +25,13 @@
       "@tests/*": ["src/tests/*"]
     },
     "types": ["vite/client", "vitest"]
-
   },
   "include": ["src", "tests"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ]
 }
+
 
 
 

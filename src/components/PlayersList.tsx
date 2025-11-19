@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Player, fetchPlayers } from '@/features/players/api';
+import { SetStateAction, useEffect, useState } from "react";
+import { Player, fetchPlayers } from "@/features/players/api";
 
 export default function PlayersList() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -9,7 +9,7 @@ export default function PlayersList() {
   useEffect(() => {
     fetchPlayers()
       .then(setPlayers)
-      .catch(err => setError(err.message))
+      .catch((err: { message: SetStateAction<string | null> }) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
 
@@ -19,7 +19,7 @@ export default function PlayersList() {
   return (
     <div>
       <ul>
-        {players.map(p => (
+        {players.map((p) => (
           <li key={p.id}>
             <strong>{p.name}</strong> - {p.position} - Effort ({p.effortScore})
           </li>

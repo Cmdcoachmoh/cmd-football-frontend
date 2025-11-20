@@ -23,10 +23,8 @@
   "author": "Coach Mohamad",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^3.2.0",
     "chart.js": "^4.5.1",
     "chartjs": "^0.3.24",
-    "chartjs-node-canvas": "^5.0.0",
     "file-saver": "^2.0.5",
     "jspdf": "^3.0.3",
     "node-fetch": "^3.3.2",

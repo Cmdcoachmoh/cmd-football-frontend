@@ -1,0 +1,30 @@
+name: Generate Bonus–Malus Chart
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  chart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate chart
+        run: node scripts/generateChart.js
+
+      - name: Commit chart
+        run: |
+          git config user.name "CMD Chart Bot"
+          git config user.email "chartbot@cmd.local"
+          git add docs/bonus_malus_chart.png
+          git commit -m "chore: update bonus-malus chart" || echo "No changes to commit"
+          git push

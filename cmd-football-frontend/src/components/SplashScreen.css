@@ -1,0 +1,45 @@
+/* src/components/SplashScreen.css */
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0a1f3d;
+  color: white;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.logo-animated {
+  width: 180px;
+  animation: zoomIn 1.5s ease-out;
+}
+
+.slogan {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  animation: fadeInText 2s ease-in;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

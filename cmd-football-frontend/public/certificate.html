@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player Certificate</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="cmd-header">
+    <div class="logo-container">
+      <img src="assets/cmd-logo.png" alt="CMD Football Logo" class="cmd-logo" />
+    </div>
+  </header>
+
+  <main>
+    <h1>🎖 Certificate Viewer</h1>
+    <input id="playerId" placeholder="Enter Player ID" />
+    <button onclick="loadCertificate()">View Certificate</button>
+    <div id="certificate"></div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 CMD Football. Built for coaches, powered by effort.</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script>
+    const modified = new Date(document.lastModified);
+    document.getElementById("lastModified").innerText =
+      "Last updated: " + modified.toLocaleString();
+  </script>
+
+  <script type="module">
+    import { getBadgeEmoji, getBadgeLabel } from "./js/badge-service.js";
+
+    window.loadCertificate = async function () {
+      const playerId = document.getElementById("playerId").value;
+      const container = document.getElementById("certificate");
+      container.innerHTML = "Loading...";
+
+      try {
+        const response = await fetch(`/api/player/${playerId}`, {
+          headers: {
+            Authorization: "Basic " + btoa("admin:adminpass")
+          }
+        });
+
+        if (!response.ok) throw new Error("Player not found");
+
+        const player = await response.json();
+        const badge = getBadgeLabel(player.jugglingLevel);
+        const emoji = getBadgeEmoji(player.jugglingLevel);
+
+        container.innerHTML = `
+          <div class="certificate-card">
+            <h2>${emoji} ${player.fullName}</h2>
+            <p><strong>Team:</strong> ${player.team}</p>
+            <p><strong>Level:</strong> ${player.level}</p>
+            <p><strong>Badge:</strong> ${badge}</p>
+            <p><strong>Juggling Level:</strong> ${player.jugglingLevel}</p>
+            <p><strong>Milestone:</strong> ${badge === "Gold" ? "Elite Performer" : "Keep Going!"}</p>
+          </div>
+        `;
+      } catch (err) {
+        container.innerHTML = "❌ Certificate not found. Please check the Player ID.";
+        console.error("Certificate load failed:", err);
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+name: Generate charts and player PDFs
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  reports:
+    runs-on: ubuntu-latest
+    env:
+      VITE_API_BASE: https://cmd-football-backend-production.up.railway.app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install native deps for canvas
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            libcairo2-dev \
+            libjpeg-dev \
+            libpango1.0-dev \
+            libgif-dev \
+            librsvg2-dev \
+            python3
+
+      - name: Install npm deps
+        run: npm ci
+
+      - name: Generate per-player charts
+        run: node scripts/generateChart.js
+
+      - name: Generate bilingual PDFs
+        run: node scripts/generatePlayerPDF.js
+
+      - name: Commit docs
+        run: |
+          git config user.name "CMD Reports Bot"
+          git config user.email "reports@cmd.local"
+          git add docs/*.png docs/*.pdf || true
+          git commit -m "chore(ci): update charts and player PDFs" || echo "No changes"
+          git push

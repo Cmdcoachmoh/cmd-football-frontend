@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
+<<<<<<< HEAD
 import {
   Chart as ChartJS,
   BarElement,
@@ -12,6 +13,13 @@ import jsPDF from "jspdf";
 import { saveAs } from "file-saver";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+=======
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from "chart.js";
+import jsPDF from "jspdf";
+import { saveAs } from "file-saver";
+
+ChartJS.register(BarElement, CategoryScale, LinearScale);
+>>>>>>> 7527a98dbff8ecaffb4a43a8c0ce6ba5046caf18
 
 type PlayerGrowthDTO = {
   name: string;
@@ -23,6 +31,7 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+<<<<<<< HEAD
   useEffect(() => {
     const fetchPlayerGrowth = async () => {
       try {
@@ -41,6 +50,31 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
 
   useEffect(() => {
     if (data && data.score >= 90) animateBadge("Elite");
+=======
+  const fetchPlayerGrowth = async (id: number) => {
+    try {
+      const response = await fetch(`/api/player/${id}/growth`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.status}`);
+      }
+      const result = await response.json();
+      setData(result);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPlayerGrowth(playerId);
+  }, [playerId]);
+
+  useEffect(() => {
+    if (data && data.score >= 90) {
+      animateBadge("Elite");
+    }
+>>>>>>> 7527a98dbff8ecaffb4a43a8c0ce6ba5046caf18
   }, [data]);
 
   const animateBadge = (badge: string) => {
@@ -84,8 +118,13 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
     saveAs(blob, `${data.name}-growth.csv`);
   };
 
+<<<<<<< HEAD
   if (loading) return <div className="spinner">⏳ Loading player growth...</div>;
   if (error) return <p className="error">⚠️ Error: {error}</p>;
+=======
+  if (loading) return <p>Loading player growth...</p>;
+  if (error) return <p>Error: {error}</p>;
+>>>>>>> 7527a98dbff8ecaffb4a43a8c0ce6ba5046caf18
   if (!data) return <p>No data available.</p>;
 
   const chartData = {
@@ -94,12 +133,17 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
       {
         label: "Growth Score",
         data: [data.score],
+<<<<<<< HEAD
         backgroundColor: [getColor(data.score)],
         borderRadius: 6
+=======
+        backgroundColor: [getColor(data.score)]
+>>>>>>> 7527a98dbff8ecaffb4a43a8c0ce6ba5046caf18
       }
     ]
   };
 
+<<<<<<< HEAD
   const chartOptions = {
     responsive: true,
     plugins: {
@@ -131,6 +175,20 @@ const ProgressChart = ({ playerId }: { playerId: number }) => {
         <button onClick={exportPDF}>📄 Export PDF</button>
         <button onClick={exportCSV}>📊 Export CSV</button>
       </div>
+=======
+  return (
+    <div className="progress-chart">
+      <h2>{data.name}</h2>
+      <p>Score: {data.score}</p>
+      <p id="badge" className="badge">
+        {getBadge(data.score)}
+      </p>
+
+      <Bar data={chartData} />
+
+      <button onClick={exportPDF}>📄 Export PDF</button>
+      <button onClick={exportCSV}>📊 Export CSV</button>
+>>>>>>> 7527a98dbff8ecaffb4a43a8c0ce6ba5046caf18
     </div>
   );
 };

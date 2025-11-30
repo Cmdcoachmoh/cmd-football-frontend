@@ -1,10 +1,10 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import PrivateRoute from "./route/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import SplashScreen from "./components/SplashScreen";
 
-// Existing pages
+// Lazy-loaded core pages
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const ProgressChartPage = lazy(() => import("./pages/ProgressChartPage"));
@@ -14,7 +14,7 @@ const TeamReportPage = lazy(() => import("./pages/TeamReportPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
-// New feature modules
+// Lazy-loaded feature modules
 const PlayerList = lazy(() => import("./features/players/PlayerList"));
 const CoachDashboard = lazy(() => import("./features/coach/Dashboard"));
 const ParentPortal = lazy(() => import("./features/parent/ParentPortal"));
@@ -48,7 +48,7 @@ const App = () => {
           <Route path="/exam-entry" element={<ExamEntryPage />} />
           <Route path="/team-report" element={<TeamReportPage />} />
 
-          {/* New features */}
+          {/* Feature modules */}
           <Route path="/players" element={<PlayerList />} />
           <Route
             path="/coach-dashboard"
@@ -60,7 +60,7 @@ const App = () => {
           />
           <Route path="/parent-portal" element={<ParentPortal />} />
 
-          {/* Fallback */}
+          {/* Fallback route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

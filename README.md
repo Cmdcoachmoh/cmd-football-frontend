@@ -5,71 +5,43 @@
 ![Build](https://github.com/Cmdcoachmoh/cmd-football-frontend/actions/workflows/build.yml/badge.svg)
 
 **Effort. Elevation. Excellence.**  
-Frontend interface for CMD Football — empowering coaches and players through data, feedback, and visual storytelling.
-
-CMD Football is a youth soccer growth tracking platform built for coaches, players, and federations. It blends data visualization, milestone logic, and emotional impact to elevate player development.
+CMD Football is a youth soccer growth platform designed to empower coaches, players, and federations through data, feedback, and visual storytelling.
 
 ---
 
-## 🚀 Live Site
-[cmdfootball.vercel.app](https://cmdfootball.vercel.app)
+## 🌐 Live Deployment
 
----
-
-## 🇫🇷 CMD Football en Français
-
-CMD Football est une plateforme de suivi de la croissance des jeunes joueurs de soccer, conçue pour les entraîneurs, les joueurs et les fédérations francophones.  
-Elle combine **visualisation de données**, **logique de jalons** et **impact émotionnel** afin d’élever le développement des talents.
-
-### 🎯 Philosophie Bonus–Malus
-CMD Football repose sur un cadre **Bonus–Malus** qui valorise l’effort et la progression tout en maintenant des standards clairs :
-
-- **Bonus** : récompenses pour la constance, l’esprit d’équipe et les progrès réalisés.  
-  *Exemples : participation régulière aux entraînements, leadership, atteinte des objectifs hebdomadaires.*
-
-- **Malus** : pénalités constructives qui signalent les axes d’amélioration sans décourager.  
-  *Exemples : absences non justifiées, exercices incomplets, manque de concentration.*
-
-Cette philosophie est intégrée dans les tableaux de bord et rapports, garantissant que les données reflètent non seulement la performance, mais aussi le **caractère et la croissance**.
+- **Frontend:** [cmdfootball.vercel.app](https://cmdfootball.vercel.app)  
+- **Backend API:** [cmd-football-backend.up.railway.app/api](https://cmd-football-backend.up.railway.app/api)
 
 ---
 
 ## 🧱 Tech Stack
-- Frontend: React + Vite + TypeScript
-- Backend: Java Spring Boot + DTO architecture
-- Deployment: Vercel (frontend), Railway/Fly.io (backend)
-- Charts: Chart.js / Recharts
-- Auth: Token-based login with protected routes
+
+| Layer       | Technology                          |
+|-------------|--------------------------------------|
+| Frontend    | React + Vite + TypeScript            |
+| Backend     | Java Spring Boot + DTO architecture  |
+| Deployment  | Vercel (frontend), Railway (backend) |
+| Charts      | Chart.js / Recharts                  |
+| Auth        | Token-based login + protected routes |
 
 ---
 
-## 📦 Features
-- Player selector with badge tiers (Elite, Advanced, Starter)
-- Progress and weekly growth charts
-- Coach-only views and milestone logic
-- Export to PDF/CSV with branded headers
-- Responsive dashboard with logout and toast feedback
+## 📦 Core Features
+
+- 🎯 Player selector with badge tiers (Elite, Advanced, Starter)  
+- 📊 Weekly progress and growth charts  
+- 🔐 Coach-only views with milestone logic  
+- 📤 Export to PDF/CSV with branded headers  
+- 📱 Responsive dashboard with logout and toast feedback  
+- 🌍 Bilingual UI (English & French)
 
 ---
 
-## 🎯 Bonus–Malus Philosophy
+## 🎯 Bonus–Malus Framework
 
-CMD Football is built on a **Bonus–Malus framework** that celebrates effort, growth, and accountability:
-
-- **Bonus**: Players earn recognition for consistency, teamwork, and progress.  
-  Examples: completing drills, showing leadership, achieving weekly milestones.
-
-- **Malus**: Constructive penalties highlight areas for improvement without discouragement.  
-  Examples: missed practices, incomplete drills, lack of focus.
-
-### Why It Matters
-- Encourages **positive reinforcement** while keeping standards clear.
-- Creates a **transparent, fair system** for coaches and players.
-- Builds a culture of **effort, elevation, and excellence** — where every success is celebrated and every setback becomes a learning opportunity.
-
----
-
-## 📊 Bonus–Malus Scoring Table
+CMD Football uses a **Bonus–Malus scoring system** to reinforce effort, accountability, and growth.
 
 | Action                          | Bonus (+) | Malus (–) | Notes                                      |
 |---------------------------------|-----------|-----------|--------------------------------------------|
@@ -81,11 +53,11 @@ CMD Football is built on a **Bonus–Malus framework** that celebrates effort, g
 | Disrespectful behavior          |           | –3        | Maintains discipline and respect            |
 | Achieves milestone (fitness goal) | +5      |           | Celebrates growth and achievement           |
 
+This framework is embedded in dashboards and reports, ensuring that performance data reflects both skill and character.
+
 ---
 
-## 📈 Bonus–Malus Visualization
-
-This chart shows weekly totals for a sample player:
+## 📈 Visualization Example
 
 ![Weekly Bonus–Malus Chart](docs/bonus_malus_chart.png)
 
@@ -97,7 +69,6 @@ CMD Football est une plateforme de suivi de la croissance des jeunes joueurs de 
 Elle combine **visualisation de données**, **logique de jalons** et **impact émotionnel** afin d’élever le développement des talents.
 
 ### 🎯 Philosophie Bonus–Malus
-CMD Football repose sur un cadre **Bonus–Malus** qui valorise l’effort et la progression tout en maintenant des standards clairs :
 
 - **Bonus** : récompenses pour la constance, l’esprit d’équipe et les progrès réalisés.  
   *Exemples : participation régulière aux entraînements, leadership, atteinte des objectifs hebdomadaires.*
@@ -105,9 +76,7 @@ CMD Football repose sur un cadre **Bonus–Malus** qui valorise l’effort et la
 - **Malus** : pénalités constructives qui signalent les axes d’amélioration sans décourager.  
   *Exemples : absences non justifiées, exercices incomplets, manque de concentration.*
 
-Cette philosophie est intégrée dans les tableaux de bord et rapports, garantissant que les données reflètent non seulement la performance, mais aussi le **caractère et la croissance**.
-
-
+---
 
 ## 🤝 Contributing
 
@@ -115,8 +84,7 @@ We welcome coaches, developers, and designers to help evolve CMD Football.
 
 ### How to Contribute
 
-1. **Fork the repo**
+1. **Fork the repository**
 2. **Clone your fork**
    ```bash
    git clone https://github.com/your-username/cmd-football-frontend.git
-

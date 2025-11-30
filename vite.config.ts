@@ -3,8 +3,12 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
+  // ✅ Ensures relative paths work in static hosting (Railway, Netlify, Vercel)
   base: "./",
+
   plugins: [react()],
+
+  // ✅ Alias resolution for modular imports
   resolve: {
     alias: {
       "@lib": path.resolve(__dirname, "src/lib"),
@@ -17,29 +21,35 @@ export default defineConfig({
       "@route": path.resolve(__dirname, "src/route")
     }
   },
+
+  // ✅ Dev server config
   server: {
     port: 4173,
     open: false
   },
+
+  // ✅ Build config for optimized output
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks(id: string) {
           if (id.includes("node_modules")) {
-            return "vendor";
+            return "vendor"; // Separates vendor code for better caching
           }
         }
       }
-    },
-    chunkSizeWarningLimit: 1000
+    }
   },
+
+  // ✅ Preview config for Railway compatibility
   preview: {
     port: 4173
   },
 
-  // ✅ Vitest config must be nested here
+  // ✅ Vitest integration
   test: {
     globals: true,
     environment: "jsdom",

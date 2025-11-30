@@ -7,7 +7,23 @@
     "moduleResolution": "Node",
     "jsx": "react-jsx",
 
-    // 📦 Module resolution and compatibility
+    // 📦 Compatibility and module handling
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "useDefineForClassFields": true,
+
+    // 🧠 Strict type checking
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+
+    // 🧭 Path aliases
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["src/lib/*"],
@@ -19,23 +35,9 @@
       "@context/*": ["src/context/*"],
       "@route/*": ["src/route/*"]
     },
-    "types": ["vite/client", "vitest"],
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
 
-    // 🧠 Strict type checking
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "isolatedModules": true,
-    "allowJs": false,
-    "noEmit": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-
-    // 🧪 Extra safety
-    "noUncheckedIndexedAccess": true
+    // 🧪 Vitest + Vite types
+    "types": ["vite/client", "vitest"]
   },
   "include": ["src", "tests"],
   "exclude": ["node_modules"],

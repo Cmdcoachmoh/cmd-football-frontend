@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CMD Juggling Library</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-top: 30px; }
+    .juggling-card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 6px; }
+    .juggling-category ul { list-style: none; padding: 0; }
+    .juggling-category li { margin-bottom: 10px; }
+    input { margin-bottom: 20px; padding: 5px; width: 150px; }
+  </style>
+</head>
+<body>
+  <h1>CMD Juggling Library</h1>
+  <input type="number" id="levelFilter" placeholder="Min Level" oninput="applyJugglingFilter()" />
+  <div id="jugglingList">Loading...</div>
+
+  <script src="juggling-library.js"></script>
+</body>
+</html>

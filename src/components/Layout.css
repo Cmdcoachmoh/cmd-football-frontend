@@ -1,0 +1,43 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0d1b2a;
+  color: white;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 1rem;
+}
+
+.branding h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #a9d6e5;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background: #f1f1f1;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0d1b2a;
+  color: white;
+  font-size: 0.9rem;
+}

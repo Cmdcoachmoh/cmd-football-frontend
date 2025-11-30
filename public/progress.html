@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player Progress</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="cmd-header">
+    <div class="logo-container">
+      <img src="assets/cmd-logo.png" alt="CMD Football Logo" class="cmd-logo" />
+    </div>
+  </header>
+
+  <main>
+    <h1>📈 Player Progress</h1>
+    <input type="text" id="playerId" placeholder="Enter Player ID" />
+    <button onclick="loadProgress()">View Progress</button>
+    <div id="progress"></div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 CMD Football. Built for coaches, powered by effort.</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script>
+    const modified = new Date(document.lastModified);
+    document.getElementById("lastModified").innerText =
+      "Last updated: " + modified.toLocaleString();
+  </script>
+
+  <script src="js/progress.js"></script>
+
+</body>
+</html>

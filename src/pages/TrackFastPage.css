@@ -1,0 +1,33 @@
+.trackfast-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+label,
+input {
+  display: block;
+  margin: 10px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.trackfast-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+  background: #f9f9f9;
+}

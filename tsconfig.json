@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    // 🎯 Target and environment
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "jsx": "react-jsx",
 
-    // 📦 Compatibility and module handling
     "allowJs": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -16,14 +14,12 @@
     "noEmit": true,
     "useDefineForClassFields": true,
 
-    // 🧠 Strict type checking
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
+    "skipDefaultLibCheck": true,                                                                                                                                               
     "noUncheckedIndexedAccess": true,
 
-    // 🧭 Path aliases
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["src/lib/*"],
@@ -33,10 +29,10 @@
       "@assets/*": ["src/assets/*"],
       "@tests/*": ["src/tests/*"],
       "@context/*": ["src/context/*"],
-      "@route/*": ["src/route/*"]
+      "@route/*": ["src/route/*"],
+      "@constants/*": ["src/constants/*"]
     },
 
-    // 🧪 Vitest + Vite types
     "types": ["vite/client", "vitest"]
   },
   "include": ["src", "tests"],

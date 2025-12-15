@@ -3,12 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./components/PrivateRoute";
 import SplashScreen from "./components/SplashScreen";
+import DrillLibraryPage from "@pages/DrillLibraryPage";
 
 // Lazy-loaded core pages
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const ProgressChartPage = lazy(() => import("./pages/ProgressChartPage"));
-const DrillBuilderPage = lazy(() => import("./pages/DrillBuilderPage"));
+const DrillBuilderPage = lazy(() => import("./features/drill/DrillBuilderPage"));
 const ExamEntryPage = lazy(() => import("./pages/ExamEntryPage"));
 const TeamReportPage = lazy(() => import("./pages/TeamReportPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -19,7 +20,7 @@ const PlayerList = lazy(() => import("./features/players/PlayerList"));
 const CoachDashboard = lazy(() => import("./features/coach/Dashboard"));
 const ParentPortal = lazy(() => import("./features/parent/ParentPortal"));
 
-const App = () => {
+const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
@@ -47,6 +48,9 @@ const App = () => {
           <Route path="/drill-builder" element={<DrillBuilderPage />} />
           <Route path="/exam-entry" element={<ExamEntryPage />} />
           <Route path="/team-report" element={<TeamReportPage />} />
+          <Route path="/drill-library" element={<DrillLibraryPage />} />
+          
+
 
           {/* Feature modules */}
           <Route path="/players" element={<PlayerList />} />
